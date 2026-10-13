@@ -43,11 +43,13 @@ include_directories(${stb_image_SOURCE_DIR})
 set(EXERCISES
     Exemplos/HelloTriangle
     Exemplos/HelloOrtho
-    Exercicios/grauA/duckRunner
+    Exercicios/grauA/RunGluGlu
 
 )
 
-add_compile_options(-Wno-pragmas)
+if(NOT MSVC)
+    add_compile_options(-Wno-pragmas)
+endif()
 
 # Define as bibliotecas para cada sistema operacional
 if(WIN32)
